@@ -40,18 +40,29 @@ jobs:
       - name: Validate YAML
         run: |
           python -c "
-          import os, yaml, sys
+          import os, sys, yaml
           errs = 0
           for root, _, files in os.walk('.'):
               if '/.git' in root or '/source' in root:
                   continue
               for f in files:
-                  if f.endswith(('.yaml', '.yml')):
-                      try:
-                          yaml.safe_load(open(os.path.join(root, f), encoding='utf-8'))
-                      except Exception as e:
-                          print('YAML FAIL', f, e)
-                          errs += 1
+                  if not f.endswith(('.yaml', '.yml')):
+                      continue
+                  p = os.path.join(root, f)
+                  try:
+                      with open(p, encoding='utf-8') as fh:
+                          text = fh.read()
+                      # mkdocs.yml holds Material emoji tags like
+                      # !!python/name:material.extensions.emoji.twemoji,
+                      # which PyYAML's safe loader rejects. Use the FullLoader
+                      # for that one file; safe_load for everything else.
+                      if os.path.basename(p) == 'mkdocs.yml':
+                          yaml.load(text, Loader=yaml.FullLoader)
+                      else:
+                          yaml.safe_load(text)
+                  except Exception as e:
+                      print('YAML FAIL', p, e)
+                      errs += 1
           sys.exit(errs)
           "
 
