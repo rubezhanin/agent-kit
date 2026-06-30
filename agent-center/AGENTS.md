@@ -112,3 +112,6 @@ Blocked: what remains unresolved, if anything
 ```
 
 Never close with `Done.` alone — that is invisible to the owner.
+
+> [!IMPORTANT]
+> An answer without the `Status:` / `Artifact:` / `Returned to:` block is a **protocol violation**, not a partial response. CI (`scripts/check_orp.py`) flags it; the operator must restate the summary before returning the turn.

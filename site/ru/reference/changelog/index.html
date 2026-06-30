@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../source-selection/">
+        <link rel="prev" href="../artifact-templates/">
       
       
         <link rel="next" href="../contributing/">
@@ -680,6 +680,8 @@
       
         
       
+        
+      
     
     
     
@@ -755,6 +757,29 @@
   
   <span class="md-ellipsis">
     Source Selection (English)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artifact-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Шаблоны артефактов
     
   </span>
   
@@ -855,6 +880,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#040-production-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0 — Production hardening
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.4.0 — Production hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#030-publication-build" class="md-nav__link">
     <span class="md-ellipsis">
       0.3.0 — Publication build
@@ -865,7 +923,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_1" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     <span class="md-ellipsis">
       Added
     </span>
@@ -1088,6 +1146,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#040-production-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.4.0 — Production hardening
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="0.4.0 — Production hardening">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#030-publication-build" class="md-nav__link">
     <span class="md-ellipsis">
       0.3.0 — Publication build
@@ -1098,7 +1189,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added_1" class="md-nav__link">
+  <a href="#added_2" class="md-nav__link">
     <span class="md-ellipsis">
       Added
     </span>
@@ -1162,8 +1253,24 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li><code>docs/AGENT_SKILL_MATRIX.en.md</code> (+ <code>.ru.md</code>) — every active profile row explicitly notes that it loads <code>origin-return-protocol</code>.</li>
 <li><code>mkdocs.yml</code> — Architecture nav gained <code>Origin Return Protocol</code>; nav translations added.</li>
 </ul>
-<h2 id="030-publication-build"><a href="https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.2.0...v0.3.0">0.3.0</a> — Publication build<a class="headerlink" href="#030-publication-build" title="Permanent link">&para;</a></h2>
+<h2 id="040-production-hardening"><a href="https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.3.1...v0.4.0">0.4.0</a> — Production hardening<a class="headerlink" href="#040-production-hardening" title="Permanent link">&para;</a></h2>
 <h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>scripts/check_orp.py</code></strong> — CI validator for the Origin Return Protocol. Walks <code>agent-center/reports/task-receipts/</code> and <code>agent-center/kanban/</code>, fails any receipt / card that does not carry <code>Status:</code> / <code>Artifact:</code> / <code>Returned to:</code> / <code>Origin:</code> / <code>Owner:</code>. Wired into <code>.github/workflows/ci.yml</code> as a release-blocking step.</li>
+<li><strong><code>scripts/health_check.py</code></strong> — single-command pre-release gate. Verifies required artifacts exist, all profile JSON parses and has the required fields, <code>.env</code> is not tracked by git, the installer dry-run completes, locale sanity holds, and ORP is wired through profiles / prompts / wiki. Used locally and in CI.</li>
+<li><strong><code>setup_kit.py --interactive</code></strong> — interactive install flow with language picker (<code>en</code> / <code>ru</code>), enumerated profile selection, dry-run preview before write, and confirmed <code>apply</code> step.</li>
+<li><strong><code>setup_kit.py --populate-env</code></strong> — masks secret input via <code>getpass</code>, never overwrites an existing <code>.env</code>, merges new values with the existing ones, falls back to env vars when stdin is closed.</li>
+<li><strong><code>agent-center/templates/artifacts/</code></strong> — five Origin-Return-aligned artifact templates: <code>note.md</code>, <code>report.md</code>, <code>brief.md</code>, <code>summary.md</code>, <code>hypothesis.md</code>. Each pre-fills the five anchors so the operator does not rebuild them from scratch. <code>artifacts/README.md</code> indexes them.</li>
+</ul>
+<h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>setup_kit.py</code> rewritten for <strong>graceful error handling</strong>: a <code>KitError</code> carries a user-facing message and an optional <code>hint</code>. <code>copy_tree</code>, <code>load_json</code>, manifest read, profile discovery, <code>populate_env</code> writes, <code>mkdir</code>, and <code>subprocess</code> calls produce actionable hints instead of tracebacks. Non-zero exit codes retain meaning (1 = user-facing failure).</li>
+<li><code>agent-center/AGENTS.md</code> — added a hard rule: "an answer without the <code>Status:</code> / <code>Artifact:</code> / <code>Returned to:</code> block is a protocol violation". The operator must restate the summary before returning the turn.</li>
+<li><code>agent-center/prompts/main-agent-system.md</code> — adds a matching <code>Hard rules</code> block citing the CI validator <code>scripts/check_orp.py</code>.</li>
+<li>CI workflow <code>.github/workflows/ci.yml</code> — gained <code>python scripts/check_orp.py</code> and <code>python scripts/health_check.py</code> steps that gate the release.</li>
+</ul>
+<h2 id="030-publication-build"><a href="https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.2.0...v0.3.0">0.3.0</a> — Publication build<a class="headerlink" href="#030-publication-build" title="Permanent link">&para;</a></h2>
+<h3 id="added_2">Added<a class="headerlink" href="#added_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>MkDocs documentation site.</strong> <code>docs_site/en/</code> and <code>docs_site/ru/</code>; Material theme, <code>static-i18n</code>, include-markdown-plugin, redirects, gen-files.</li>
 <li><strong>GitHub Actions CI.</strong> <code>.github/workflows/ci.yml</code> validates JSON / YAML, runs <code>python scripts/setup_kit.py --dry-run</code>, and runs the locale-sanity check.</li>

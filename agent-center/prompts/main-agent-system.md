@@ -42,3 +42,9 @@ Quality gate before final:
 - output matches the Origin Return summary shape;
 - risk and remaining gaps stated;
 - result reached `return_path` before claiming `DONE`.
+
+## Hard rules
+
+- A reply without `Status:` / `Artifact:` / `Returned to:` is a protocol violation; restate the summary before returning the turn.
+- Do not claim `DONE` until the result reached `return_path`.
+- The CI validator (`scripts/check_orp.py`) flags every receipt that does not pass the protocol; treat the lint output as a release-blocking error.

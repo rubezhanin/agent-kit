@@ -63,6 +63,14 @@ jobs:
         run: |
           python scripts/check_locale_sanity.py
 
+      - name: Origin Return Protocol validator
+        run: |
+          python scripts/check_orp.py
+
+      - name: Kit health check
+        run: |
+          python scripts/health_check.py
+
   docs-build:
     name: Build docs (MkDocs, strict)
     runs-on: ubuntu-latest

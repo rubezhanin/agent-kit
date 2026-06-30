@@ -71,6 +71,13 @@
         <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/telegram-channel-intelligence/"/>
     </url>
     <url>
+        <loc>Nonereference/artifact-templates/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/artifact-templates/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/artifact-templates/"/>
+    </url>
+    <url>
         <loc>Nonereference/changelog/</loc>
         <lastmod>2026-06-30</lastmod>
         <changefreq>daily</changefreq>
@@ -167,6 +174,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/telegram-channel-intelligence/"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneintegrations/telegram-channel-intelligence/"/>
+    </url>
+    <url>
+        <loc>Noneru/reference/artifact-templates/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/artifact-templates/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/artifact-templates/"/>
     </url>
     <url>
         <loc>Noneru/reference/changelog/</loc>

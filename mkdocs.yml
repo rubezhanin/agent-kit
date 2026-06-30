@@ -140,6 +140,7 @@ nav:
   - Reference:
       - reference/skill-matrix.md
       - reference/source-selection.md
+      - reference/artifact-templates.md
       - reference/changelog.md
       - reference/contributing.md
   - Integrations:

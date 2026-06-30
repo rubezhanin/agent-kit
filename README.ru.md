@@ -1,7 +1,7 @@
 # Hermes Agent Architecture Kit
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
 [![CI](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml)
 [![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://your-org.github.io/hermes-agent-architecture-kit/)
 

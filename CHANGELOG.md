@@ -26,6 +26,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `docs/AGENT_SKILL_MATRIX.en.md` (+ `.ru.md`) — every active profile row explicitly notes that it loads `origin-return-protocol`.
 - `mkdocs.yml` — Architecture nav gained `Origin Return Protocol`; nav translations added.
 
+## [0.4.0] — Production hardening
+
+### Added
+- **`scripts/check_orp.py`** — CI validator for the Origin Return Protocol. Walks `agent-center/reports/task-receipts/` and `agent-center/kanban/`, fails any receipt / card that does not carry `Status:` / `Artifact:` / `Returned to:` / `Origin:` / `Owner:`. Wired into `.github/workflows/ci.yml` as a release-blocking step.
+- **`scripts/health_check.py`** — single-command pre-release gate. Verifies required artifacts exist, all profile JSON parses and has the required fields, `.env` is not tracked by git, the installer dry-run completes, locale sanity holds, and ORP is wired through profiles / prompts / wiki. Used locally and in CI.
+- **`setup_kit.py --interactive`** — interactive install flow with language picker (`en` / `ru`), enumerated profile selection, dry-run preview before write, and confirmed `apply` step.
+- **`setup_kit.py --populate-env`** — masks secret input via `getpass`, never overwrites an existing `.env`, merges new values with the existing ones, falls back to env vars when stdin is closed.
+- **`agent-center/templates/artifacts/`** — five Origin-Return-aligned artifact templates: `note.md`, `report.md`, `brief.md`, `summary.md`, `hypothesis.md`. Each pre-fills the five anchors so the operator does not rebuild them from scratch. `artifacts/README.md` indexes them.
+
+### Changed
+- `setup_kit.py` rewritten for **graceful error handling**: a `KitError` carries a user-facing message and an optional `hint`. `copy_tree`, `load_json`, manifest read, profile discovery, `populate_env` writes, `mkdir`, and `subprocess` calls produce actionable hints instead of tracebacks. Non-zero exit codes retain meaning (1 = user-facing failure).
+- `agent-center/AGENTS.md` — added a hard rule: "an answer without the `Status:` / `Artifact:` / `Returned to:` block is a protocol violation". The operator must restate the summary before returning the turn.
+- `agent-center/prompts/main-agent-system.md` — adds a matching `Hard rules` block citing the CI validator `scripts/check_orp.py`.
+- CI workflow `.github/workflows/ci.yml` — gained `python scripts/check_orp.py` and `python scripts/health_check.py` steps that gate the release.
+
 ## [0.3.0] — Publication build
 
 ### Added
@@ -51,6 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Telegram integration blueprint.
 - Cross-platform entry points: `install.ps1`, `install.sh`.
 
+[0.4.0]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/your-org/hermes-agent-architecture-kit/releases/tag/v0.2.0

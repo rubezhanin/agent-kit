@@ -1,11 +1,11 @@
 # Hermes Agent Architecture Kit
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.3.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
 [![CI](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml)
 [![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://your-org.github.io/hermes-agent-architecture-kit/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
-[![Hermes Kit](https://img.shields.io/badge/hermes--kit-0.3.0-indigo)](https://github.com/your-org/hermes-agent-architecture-kit)
+[![Hermes Kit](https://img.shields.io/badge/hermes--kit-0.4.0-indigo)](https://github.com/your-org/hermes-agent-architecture-kit)
 
 A manifest-driven, opinionated starter kit for setting up a [Hermes Agent](https://github.com) workspace with profiles, skills, wiki, memory, optional Kanban, and a read-only Telegram channel intelligence layer.
 
