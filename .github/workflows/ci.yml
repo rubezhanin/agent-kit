@@ -54,10 +54,12 @@ jobs:
                           text = fh.read()
                       # mkdocs.yml holds Material emoji tags like
                       # !!python/name:material.extensions.emoji.twemoji,
-                      # which PyYAML's safe loader rejects. Use the FullLoader
-                      # for that one file; safe_load for everything else.
+                      # which PyYAML's safe loader rejects AND which the
+                      # FullLoader tries to import as a Python module.
+                      # Use BaseLoader: it parses the structure and ignores
+                      # !!python/* tag values as plain strings.
                       if os.path.basename(p) == 'mkdocs.yml':
-                          yaml.load(text, Loader=yaml.FullLoader)
+                          yaml.load(text, Loader=yaml.BaseLoader)
                       else:
                           yaml.safe_load(text)
                   except Exception as e:
