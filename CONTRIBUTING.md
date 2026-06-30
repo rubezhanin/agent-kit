@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for taking an interest in `hermes-agent-architecture-kit`. This document explains how to file issues, propose changes, and submit pull requests.
+Thanks for taking an interest in `hermes-agent`. This document explains how to file issues, propose changes, and submit pull requests.
 
 > **Ground rule:** keep changes **small and focused**. One profile, one skill, one doc change per PR — not a kitchen-sink refactor.
 
@@ -26,8 +26,8 @@ Always include:
 ## Working locally
 
 ```bash
-git clone <YOUR_REPO_URL>
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit
+cd hermes-agent
 python -m venv .venv
 source .venv/bin/activate   # or .venv\Scripts\Activate.ps1 on Windows
 pip install -r requirements-dev.txt   # when present

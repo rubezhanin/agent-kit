@@ -68,4 +68,4 @@ Blocked: что осталось нерешённым
 
 ## Подробнее
 
-Полный оригинал протокола на русском — [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md).
+Полный оригинал протокола на русском — [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md).

@@ -3,8 +3,8 @@
 ## Quick Start
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit/kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent/kit
 python scripts/setup_kit.py
 ```
 

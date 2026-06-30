@@ -1,6 +1,6 @@
 # Source Selection (English)
 
-> Canonical English version. Russian localization: [`docs/SOURCE_SELECTION.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/SOURCE_SELECTION.ru.md).
+> Canonical English version. Russian localization: [`docs/SOURCE_SELECTION.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/SOURCE_SELECTION.ru.md).
 
 ## Moved into `kit/source`
 

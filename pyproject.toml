@@ -1,5 +1,5 @@
 [project]
-name = "hermes-agent-architecture-kit"
+name = "hermes-agent"
 dynamic = ["version"]
 description = "Manifest-driven kit for installing a Hermes Agent workspace."
 authors = [
@@ -25,10 +25,10 @@ classifiers = [
 keywords = ["hermes", "agent", "kit", "manifest", "installer"]
 
 [project.urls]
-"Homepage" = "https://github.com/your-org/hermes-agent-architecture-kit"
-"Documentation" = "https://your-org.github.io/hermes-agent-architecture-kit/"
-"Bug Tracker" = "https://github.com/your-org/hermes-agent-architecture-kit/issues"
-"Changelog" = "https://github.com/your-org/hermes-agent-architecture-kit/blob/main/CHANGELOG.md"
+"Homepage" = "https://github.com/rubezhanin/agent-kit"
+"Documentation" = "https://rubezhanin.github.io/hermes-agent/"
+"Bug Tracker" = "https://github.com/rubezhanin/agent-kit/issues"
+"Changelog" = "https://github.com/rubezhanin/agent-kit/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 docs = ["mkdocs==1.6.1"]

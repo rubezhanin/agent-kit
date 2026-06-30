@@ -66,8 +66,8 @@ Blocked: что осталось нерешённым
 
 | Документ | Зачем |
 | --- | --- |
-| [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md) | Оригинал протокола на русском. |
-| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill-обёртка. |
-| [`agent-center/templates/task-card.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/task-card.md) | Шаблон карточки задачи. |
-| [`agent-center/templates/receipt.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/receipt.md) | Шаблон receipt. |
-| [`agent-center/AGENTS.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/AGENTS.ru.md) | Контракт оператора. |
+| [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md) | Оригинал протокола на русском. |
+| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill-обёртка. |
+| [`agent-center/templates/task-card.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/task-card.md) | Шаблон карточки задачи. |
+| [`agent-center/templates/receipt.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/receipt.md) | Шаблон receipt. |
+| [`agent-center/AGENTS.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/AGENTS.ru.md) | Контракт оператора. |

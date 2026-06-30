@@ -80,4 +80,4 @@ status: DONE
 final_message: file attached below
 ```
 
-For the original protocol text — the full Russian write-up with the reasoning behind each status — see [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) in this repository.
+For the original protocol text — the full Russian write-up with the reasoning behind each status — see [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) in this repository.

@@ -1,11 +1,13 @@
 # Hermes Agent Architecture Kit
 
+> **Languages:** [English (this file)](README.md) · [Русский](README.ru.md)
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
-[![CI](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml)
-[![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://your-org.github.io/hermes-agent-architecture-kit/)
+[![CI](https://github.com/rubezhanin/agent-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/rubezhanin/agent-kit/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://rubezhanin.github.io/hermes-agent/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
-[![Hermes Kit](https://img.shields.io/badge/hermes--kit-0.4.0-indigo)](https://github.com/your-org/hermes-agent-architecture-kit)
+[![Hermes Kit](https://img.shields.io/badge/hermes--kit-0.4.0-indigo)](https://github.com/rubezhanin/agent-kit)
 
 A manifest-driven, opinionated starter kit for setting up a [Hermes Agent](https://github.com) workspace with profiles, skills, wiki, memory, optional Kanban, and a read-only Telegram channel intelligence layer.
 
@@ -13,6 +15,38 @@ It ships with a conservative installer that **discovers** profiles from `agent-c
 
 > [!IMPORTANT]
 > This kit does **not** include the Hermes Agent runtime. Install Hermes separately (or pass `--hermes-install-command`), then point this kit at the workspace.
+
+---
+
+<details>
+<summary><strong>Русская версия / Russian version</strong> — короткое summary (раскройте для краткого описания на русском)</summary>
+
+> **Полная русская версия:** [`README.ru.md`](README.ru.md)
+
+Манифестно-управляемый, консервативный стартовый комплект для развёртывания рабочего пространства Hermes Agent: профили, навыки, wiki, память, опциональный Kanban и слой read-only Telegram-разведки. Установщик обнаруживает профили из `agent-center/profiles/*.profile.json`, **никогда** не запрашивает секреты в чате и **никогда** не правит существующую конфигурацию Hermes без явного approval.
+
+**Быстрый старт:**
+
+```bash
+git clone https://github.com/rubezhanin/agent-kit
+cd agent-kit
+sh ./install.sh                # Linux / macOS
+# или
+.\install.ps1                  # Windows PowerShell
+# или
+python scripts/setup_kit.py    # кросс-платформенный
+```
+
+В комплекте:
+
+- 9 активных профилей (`main-operator`, `researcher`, `technical-engineer`, `business-analyst`, `methodologist`, `marketer`, `designer`, `legal-ops`, `economist`).
+- 8 operations-навыков, 8 specialists, 1 optional.
+- **Origin Return Protocol** как первый слой агентской операционки.
+- CI + сайт документации (MkDocs Material), билд под GitHub Pages.
+
+Подробности — в [`README.ru.md`](README.ru.md).
+
+</details>
 
 ---
 
@@ -48,16 +82,16 @@ Most Hermes setups start from scratch in chat: you assemble a prompt, write a fe
 ### Linux / macOS
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 sh ./install.sh
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 .\install.ps1
 ```
 
@@ -86,7 +120,7 @@ See [`GITHUB_INSTALL.md`](GITHUB_INSTALL.md) for the full reference and [`docs/O
 ## Repository layout
 
 ```
-hermes-agent-architecture-kit/
+hermes-agent/
 ├── README.md                        # this file (English, primary)
 ├── README.ru.md                     # Russian localization
 ├── LICENSE                          # MIT
@@ -185,7 +219,7 @@ mkdocs build      # → site/
 mkdocs serve      # http://127.0.0.1:8000
 ```
 
-The site is published to GitHub Pages by `.github/workflows/docs.yml` on every push to `main` and on tagged releases. Visit `https://<org>.github.io/hermes-agent-architecture-kit/` after the first deploy.
+The site is published to GitHub Pages by `.github/workflows/docs.yml` on every push to `main` and on tagged releases. Visit `https://<org>.github.io/hermes-agent/` after the first deploy.
 
 See [`docs/AGENT_SKILL_MATRIX.en.md`](docs/AGENT_SKILL_MATRIX.en.md) and `agent-center/skills/README.md` for the full skill matrix.
 

@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.4.0-blue.svg)](CHANGELOG.md)
-[![CI](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/hermes-agent-architecture-kit/actions/workflows/ci.yml)
-[![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://your-org.github.io/hermes-agent-architecture-kit/)
+[![CI](https://github.com/rubezhanin/agent-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/rubezhanin/agent-kit/actions/workflows/ci.yml)
+[![Docs](https://img.shields.io/badge/docs-mkdocs--material-success)](https://rubezhanin.github.io/hermes-agent/)
 
 [English version →](README.md)
 
@@ -48,16 +48,16 @@
 ### Linux / macOS
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 sh ./install.sh
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 .\install.ps1
 ```
 
@@ -86,7 +86,7 @@ python scripts/setup_kit.py             # выполнить
 ## Структура репозитория
 
 ```
-hermes-agent-architecture-kit/
+hermes-agent/
 ├── README.md                        # English (основной)
 ├── README.ru.md                     # этот файл
 ├── LICENSE                          # MIT

@@ -1,5 +1,5 @@
 {
-  "name": "hermes-agent-architecture-kit",
+  "name": "hermes-agent",
   "version": "0.4.0",
   "description": "Universal manifest-driven kit for installing a Hermes Agent workspace, profiles, skills, memory/wiki and optional integrations.",
   "agent_center": "agent-center",

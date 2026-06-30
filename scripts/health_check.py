@@ -131,6 +131,33 @@ def check_installer_dry_run() -> list[str]:
     return []
 
 
+I18N_LINE_EXEMPT_FRAGMENTS = (
+    "Languages:",  # README language banner that links to README.ru.md
+    "Полная русская версия",  # the explicit RU link inside the details fold
+)
+
+
+def cyrillic_outside_details(p: Path) -> bool:
+    """True if `p` contains cyrillic outside a `<details>...</details>` fold
+    and outside a tiny set of explicit i18n lines (language banner, links).
+    """
+    text = p.read_text(encoding="utf-8")
+    in_details = False
+    for line in text.splitlines():
+        if "<details>" in line.lower():
+            in_details = True
+        if "</details>" in line.lower():
+            in_details = False
+            continue
+        if in_details:
+            continue
+        if any(frag in line for frag in I18N_LINE_EXEMPT_FRAGMENTS):
+            continue
+        if has_cyrillic(line):
+            return True
+    return False
+
+
 def check_locale_sanity() -> list[str]:
     errs: list[str] = []
     canonical = [
@@ -150,13 +177,8 @@ def check_locale_sanity() -> list[str]:
         p = ROOT / rel
         if not p.exists():
             continue
-        if has_cyrillic(p.read_text(encoding="utf-8")):
-            errs.append(f"{rel}: cyrillic character found in English file")
-    # Files where Cyrillic is intentional (RU nav translations in mkdocs
-    # i18n block, the locale-sanity script itself, etc.).
-    if has_cyrillic((ROOT / "mkdocs.yml").read_text(encoding="utf-8")):
-        # mkdocs.yml holds the i18n nav_translations block by design.
-        pass
+        if cyrillic_outside_details(p):
+            errs.append(f"{rel}: cyrillic character found outside <details> i18n fold")
     return errs
 
 

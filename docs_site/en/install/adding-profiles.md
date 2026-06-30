@@ -1,6 +1,6 @@
 # Adding profiles
 
-> Mirrors `docs/ADDING_PROFILES.en.md`. Russian: [here](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/install/adding-profiles.md).
+> Mirrors `docs/ADDING_PROFILES.en.md`. Russian: [here](https://github.com/rubezhanin/agent-kit/blob/main/docs/install/adding-profiles.md).
 
 The kit is manifest-driven. To add a new agent profile, add files. **Do not edit the installer.**
 

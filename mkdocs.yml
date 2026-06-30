@@ -49,7 +49,7 @@ extra:
     default: stable
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-org/hermes-agent-architecture-kit
+      link: https://github.com/rubezhanin/agent-kit
       name: GitHub repository
   generator: false
 

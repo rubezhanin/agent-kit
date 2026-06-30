@@ -1,6 +1,6 @@
 ---
 name: Pull request
-about: Open a PR against hermes-agent-architecture-kit
+about: Open a PR against hermes-agent
 title: ""
 labels: ""
 assignees: ""

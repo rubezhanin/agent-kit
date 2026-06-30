@@ -44,6 +44,6 @@ verification:
 
 | Документ | Зачем |
 | --- | --- |
-| [`agent-center/templates/artifacts/README.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/artifacts/README.md) | Индекс шаблонов. |
-| [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md) | Полный текст протокола. |
-| [`scripts/check_orp.py`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/scripts/check_orp.py) | CI-валидатор. |
+| [`agent-center/templates/artifacts/README.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/artifacts/README.md) | Индекс шаблонов. |
+| [`agent-center/operations/origin-return-protocol/PROTOCOL.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.ru.md) | Полный текст протокола. |
+| [`scripts/check_orp.py`](https://github.com/rubezhanin/agent-kit/blob/main/scripts/check_orp.py) | CI-валидатор. |

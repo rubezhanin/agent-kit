@@ -84,6 +84,9 @@ EXEMPT_LINE_FRAGMENTS = (
     "nav_translations",
     "name: Русский",
     "default: true",  # mkdocs i18n default language flag
+    # The README.md i18n fold: lines under <details>...</details> are the
+    # inline RU summary so RU readers see the project from the main view.
+    "Полная русская версия",
 )
 
 
@@ -105,8 +108,18 @@ def main() -> int:
         if not path.exists():
             return
         text = path.read_text(encoding="utf-8")
+        # Track whether we are currently inside a <details>...</details> block;
+        # any cyrillic inside is the intentional i18n fold and is exempt.
+        in_details = False
         for lineno, line in enumerate(text.splitlines(), start=1):
+            if "<details>" in line.lower():
+                in_details = True
+            if "</details>" in line.lower():
+                in_details = False
+                continue
             if not has_cyrillic(line):
+                continue
+            if in_details:
                 continue
             if any(frag in line for frag in EXEMPT_LINE_FRAGMENTS):
                 continue

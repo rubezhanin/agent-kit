@@ -1,6 +1,6 @@
 # Implementation Plan (English)
 
-> Canonical English version. Russian localization: [`docs/IMPLEMENTATION_PLAN.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/IMPLEMENTATION_PLAN.ru.md).
+> Canonical English version. Russian localization: [`docs/IMPLEMENTATION_PLAN.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/IMPLEMENTATION_PLAN.ru.md).
 
 ## Goal
 

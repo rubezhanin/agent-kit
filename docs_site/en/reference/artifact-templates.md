@@ -54,7 +54,7 @@ A correct reply includes all five anchors and the final-answer shape.
 
 | Document | Purpose |
 | --- | --- |
-| [`agent-center/templates/artifacts/README.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/artifacts/README.md) | Index of artifact templates. |
-| [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) | Full Origin Return Protocol. |
-| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill wrapper. |
-| [`scripts/check_orp.py`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/scripts/check_orp.py) | CI validator. |
+| [`agent-center/templates/artifacts/README.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/artifacts/README.md) | Index of artifact templates. |
+| [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) | Full Origin Return Protocol. |
+| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill wrapper. |
+| [`scripts/check_orp.py`](https://github.com/rubezhanin/agent-kit/blob/main/scripts/check_orp.py) | CI validator. |

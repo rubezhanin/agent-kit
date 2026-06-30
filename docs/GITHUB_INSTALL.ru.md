@@ -5,8 +5,8 @@
 ## Быстрый старт
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 sh ./install.sh        # POSIX
 python scripts/setup_kit.py   # кросс-платформенный
 ```
@@ -14,8 +14,8 @@ python scripts/setup_kit.py   # кросс-платформенный
 Windows PowerShell:
 
 ```powershell
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 .\install.ps1
 ```
 

@@ -1,6 +1,6 @@
 # Agent × Skill Matrix (English)
 
-> Canonical English version. Russian localization: [`docs/AGENT_SKILL_MATRIX.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/AGENT_SKILL_MATRIX.ru.md).
+> Canonical English version. Russian localization: [`docs/AGENT_SKILL_MATRIX.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/AGENT_SKILL_MATRIX.ru.md).
 
 This is where to look when you need to know which agents / profiles ship with which skills.
 

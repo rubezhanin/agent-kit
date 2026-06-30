@@ -1,6 +1,6 @@
 # Architecture Review (English)
 
-> Canonical English version. Russian localization: [`docs/ARCHITECTURE_REVIEW.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/ARCHITECTURE_REVIEW.ru.md).
+> Canonical English version. Russian localization: [`docs/ARCHITECTURE_REVIEW.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/ARCHITECTURE_REVIEW.ru.md).
 
 ## Target architecture
 

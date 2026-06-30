@@ -42,4 +42,4 @@ install (one of: minimal / full / discovery-only / with-watcher)
 финальный receipt (в reports/task-receipts/)
 ```
 
-Полный диалоговый скрипт — в [`docs/ONE_FILE_HERMES_KIT_INSTALLER.ru.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/ONE_FILE_HERMES_KIT_INSTALLER.ru.md) в репозитории.
+Полный диалоговый скрипт — в [`docs/ONE_FILE_HERMES_KIT_INSTALLER.ru.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/ONE_FILE_HERMES_KIT_INSTALLER.ru.md) в репозитории.

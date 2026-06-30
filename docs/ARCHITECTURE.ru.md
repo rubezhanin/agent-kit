@@ -1,6 +1,6 @@
 # Архитектура (end-to-end)
 
-> Русская локализация. Канонический английский — [Architecture (English, GitHub)](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/ARCHITECTURE.en.md).
+> Русская локализация. Канонический английский — [Architecture (English, GitHub)](https://github.com/rubezhanin/agent-kit/blob/main/docs/ARCHITECTURE.en.md).
 
 У набора три задачи:
 
@@ -38,7 +38,7 @@
 ## 1. Структура репозитория
 
 ```text
-hermes-agent-architecture-kit/
+hermes-agent/
 ├── README.md, README.ru.md           # основная документация (EN, RU)
 ├── LICENSE                           # MIT
 ├── CHANGELOG.md                      # release notes

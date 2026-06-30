@@ -1,12 +1,12 @@
 # Install
 
-> This page mirrors `docs/GITHUB_INSTALL.en.md`. The Russian version is [here](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/install/index.md).
+> This page mirrors `docs/GITHUB_INSTALL.en.md`. The Russian version is [here](https://github.com/rubezhanin/agent-kit/blob/main/docs/install/index.md).
 
 ## Quick start
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 
 # Linux / macOS:
 sh ./install.sh

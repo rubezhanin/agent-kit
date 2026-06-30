@@ -66,8 +66,8 @@ A correct reply includes all five anchors and the final-answer shape above. A re
 
 | Document | Purpose |
 | --- | --- |
-| [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) | Full English reference. |
-| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill wrapper. |
-| [`agent-center/templates/task-card.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/task-card.md) | Task-card template. |
-| [`agent-center/templates/receipt.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/templates/receipt.md) | Receipt template. |
-| [`agent-center/AGENTS.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/agent-center/AGENTS.md) | Operator contract. |
+| [`agent-center/operations/origin-return-protocol/PROTOCOL.en.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/operations/origin-return-protocol/PROTOCOL.en.md) | Full English reference. |
+| [`agent-center/skills/operations/origin-return-protocol/SKILL.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/skills/operations/origin-return-protocol/SKILL.md) | Skill wrapper. |
+| [`agent-center/templates/task-card.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/task-card.md) | Task-card template. |
+| [`agent-center/templates/receipt.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/templates/receipt.md) | Receipt template. |
+| [`agent-center/AGENTS.md`](https://github.com/rubezhanin/agent-kit/blob/main/agent-center/AGENTS.md) | Operator contract. |

@@ -5,8 +5,8 @@
 ## Быстрый старт
 
 ```bash
-git clone <YOUR_REPO_URL> hermes-agent-architecture-kit
-cd hermes-agent-architecture-kit
+git clone https://github.com/rubezhanin/agent-kit hermes-agent
+cd hermes-agent
 
 # Linux / macOS:
 sh ./install.sh

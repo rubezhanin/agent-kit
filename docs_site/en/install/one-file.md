@@ -1,6 +1,6 @@
 # One-file installer
 
-> Mirrors `docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md`. Russian: [here](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/install/one-file.md).
+> Mirrors `docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md`. Russian: [here](https://github.com/rubezhanin/agent-kit/blob/main/docs/install/one-file.md).
 
 You can hand the one-file installer to a clean Hermes agent. The agent walks the owner through the install in dialog mode.
 
@@ -42,4 +42,4 @@ install (one of: minimal / full / discovery-only / with-watcher)
 final receipt (saved under reports/task-receipts/)
 ```
 
-For the full dialog script, see [`docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md`](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md) in the repository.
+For the full dialog script, see [`docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md`](https://github.com/rubezhanin/agent-kit/blob/main/docs/ONE_FILE_HERMES_KIT_INSTALLER.en.md) in the repository.

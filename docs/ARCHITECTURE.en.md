@@ -1,6 +1,6 @@
 # Architecture (End-to-End)
 
-> Canonical English version of how the kit installs, runs and stays safe. This is the single page to read when you want to understand the system end-to-end. The companion doc [Architecture review (English, GitHub)](https://github.com/your-org/hermes-agent-architecture-kit/blob/main/docs/ARCHITECTURE_REVIEW.en.md) is the meta-review of the original material; this page is the *current* architecture of the kit.
+> Canonical English version of how the kit installs, runs and stays safe. This is the single page to read when you want to understand the system end-to-end. The companion doc [Architecture review (English, GitHub)](https://github.com/rubezhanin/agent-kit/blob/main/docs/ARCHITECTURE_REVIEW.en.md) is the meta-review of the original material; this page is the *current* architecture of the kit.
 
 The kit has three concerns:
 
@@ -38,7 +38,7 @@ The kit has three concerns:
 ## 1. Repository layout and what each piece does
 
 ```text
-hermes-agent-architecture-kit/
+hermes-agent/
 ├── README.md, README.ru.md           # primary docs (EN, RU)
 ├── LICENSE                           # MIT
 ├── CHANGELOG.md                      # release notes

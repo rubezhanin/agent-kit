@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Telegram integration blueprint.
 - Cross-platform entry points: `install.ps1`, `install.sh`.
 
-[0.4.0]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.3.1...v0.4.0
-[0.3.1]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/your-org/hermes-agent-architecture-kit/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/your-org/hermes-agent-architecture-kit/releases/tag/v0.2.0
+[0.4.0]: https://github.com/rubezhanin/agent-kit/compare/v0.3.1...v0.4.0
+[0.3.1]: https://github.com/rubezhanin/agent-kit/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/rubezhanin/agent-kit/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/rubezhanin/agent-kit/releases/tag/v0.2.0
