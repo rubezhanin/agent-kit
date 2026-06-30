@@ -1,0 +1,75 @@
+[project]
+name = "hermes-agent-architecture-kit"
+dynamic = ["version"]
+description = "Manifest-driven kit for installing a Hermes Agent workspace."
+authors = [
+    { name = "Hermes Kit contributors" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: System :: Installation/Setup",
+]
+keywords = ["hermes", "agent", "kit", "manifest", "installer"]
+
+[project.urls]
+"Homepage" = "https://github.com/your-org/hermes-agent-architecture-kit"
+"Documentation" = "https://your-org.github.io/hermes-agent-architecture-kit/"
+"Bug Tracker" = "https://github.com/your-org/hermes-agent-architecture-kit/issues"
+"Changelog" = "https://github.com/your-org/hermes-agent-architecture-kit/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+docs = ["mkdocs==1.6.1"]
+dev = ["PyYAML==6.0.2", "jsonschema==4.23.0", "pytest==8.3.4"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-q"
+
+# ----------------------------------------------------------------------------
+# Manifest version is the single source of truth; expose it as the package
+# version via a thin shim under src/hermes_kit/__init__.py if you want
+# `python -c "import hermes_kit; print(hermes_kit.__version__)"` to work.
+# The shim is not required for the installer to function.
+# ----------------------------------------------------------------------------
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = ["I"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["T201"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["hermes_kit"]

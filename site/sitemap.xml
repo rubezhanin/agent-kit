@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/"/>
+    </url>
+    <url>
+        <loc>Nonearchitecture/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/"/>
+    </url>
+    <url>
+        <loc>Nonearchitecture/architecture-review/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/architecture-review/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/architecture-review/"/>
+    </url>
+    <url>
+        <loc>Nonearchitecture/implementation-plan/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/implementation-plan/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/implementation-plan/"/>
+    </url>
+    <url>
+        <loc>Nonearchitecture/origin-return-protocol/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/origin-return-protocol/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/origin-return-protocol/"/>
+    </url>
+    <url>
+        <loc>Noneinstall/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/"/>
+    </url>
+    <url>
+        <loc>Noneinstall/adding-profiles/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/adding-profiles/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/adding-profiles/"/>
+    </url>
+    <url>
+        <loc>Noneinstall/one-file/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/one-file/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/one-file/"/>
+    </url>
+    <url>
+        <loc>Noneintegrations/carousel-creator/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneintegrations/carousel-creator/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/carousel-creator/"/>
+    </url>
+    <url>
+        <loc>Noneintegrations/telegram-channel-intelligence/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneintegrations/telegram-channel-intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/telegram-channel-intelligence/"/>
+    </url>
+    <url>
+        <loc>Nonereference/changelog/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/changelog/"/>
+    </url>
+    <url>
+        <loc>Nonereference/contributing/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/contributing/"/>
+    </url>
+    <url>
+        <loc>Nonereference/skill-matrix/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/skill-matrix/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/skill-matrix/"/>
+    </url>
+    <url>
+        <loc>Nonereference/source-selection/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/source-selection/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/source-selection/"/>
+    </url>
+    <url>
+        <loc>Noneru/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+    </url>
+    <url>
+        <loc>Noneru/architecture/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/"/>
+    </url>
+    <url>
+        <loc>Noneru/architecture/architecture-review/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/architecture-review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/architecture-review/"/>
+    </url>
+    <url>
+        <loc>Noneru/architecture/implementation-plan/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/implementation-plan/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/implementation-plan/"/>
+    </url>
+    <url>
+        <loc>Noneru/architecture/origin-return-protocol/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/architecture/origin-return-protocol/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonearchitecture/origin-return-protocol/"/>
+    </url>
+    <url>
+        <loc>Noneru/install/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/"/>
+    </url>
+    <url>
+        <loc>Noneru/install/adding-profiles/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/adding-profiles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/adding-profiles/"/>
+    </url>
+    <url>
+        <loc>Noneru/install/one-file/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/install/one-file/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneinstall/one-file/"/>
+    </url>
+    <url>
+        <loc>Noneru/integrations/carousel-creator/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/carousel-creator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneintegrations/carousel-creator/"/>
+    </url>
+    <url>
+        <loc>Noneru/integrations/telegram-channel-intelligence/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/integrations/telegram-channel-intelligence/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneintegrations/telegram-channel-intelligence/"/>
+    </url>
+    <url>
+        <loc>Noneru/reference/changelog/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/changelog/"/>
+    </url>
+    <url>
+        <loc>Noneru/reference/contributing/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/contributing/"/>
+    </url>
+    <url>
+        <loc>Noneru/reference/skill-matrix/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/skill-matrix/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/skill-matrix/"/>
+    </url>
+    <url>
+        <loc>Noneru/reference/source-selection/</loc>
+        <lastmod>2026-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/reference/source-selection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonereference/source-selection/"/>
+    </url>
+</urlset>

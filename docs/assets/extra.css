@@ -1,0 +1,30 @@
+/* Hermes Kit docs — extra styles */
+
+:root {
+  --md-admonition-bg-color: var(--md-default-bg-color);
+}
+
+/* Better spacing for the grid cards on the home page */
+.grid.cards > ul {
+  gap: 1rem;
+}
+
+/* Anchor links under section headings should not take too much space */
+.md-typeset .headerlink {
+  opacity: 0.25;
+}
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink {
+  opacity: 1;
+}
+
+/* Code blocks: ensure long URLs wrap */
+.md-typeset code {
+  word-break: break-word;
+}
+
+/* Make admonition icons consistent across light/dark */
+.md-typeset .admonition {
+  border-radius: 0.4rem;
+}

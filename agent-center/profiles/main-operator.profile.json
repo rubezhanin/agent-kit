@@ -1,0 +1,28 @@
+{
+  "name": "main-operator",
+  "title": "Main Operator",
+  "type": "primary",
+  "default_enabled": true,
+  "description": "Main operator of the Hermes loop: triage, routing, Kanban, quality gate and the final user answer.",
+  "prompt": "agent-center/AGENTS.md",
+  "skills": [
+    "agent-creator",
+    "profile-factory",
+    "origin-return-protocol",
+    "wiki-memory",
+    "kanban-operator",
+    "gateway-ux",
+    "skill-hygiene-audit",
+    "hermes-token-drain-diagnostic",
+    "telegram-channel-intelligence"
+  ],
+  "approval_required_for": [
+    "external_side_effects",
+    "destructive_actions",
+    "production",
+    "secrets",
+    "accounts",
+    "telegram_join_or_subscribe"
+  ]
+}
+

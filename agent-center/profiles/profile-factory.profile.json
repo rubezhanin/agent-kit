@@ -1,0 +1,18 @@
+{
+  "name": "profile-factory",
+  "title": "Profile Factory",
+  "type": "operations",
+  "default_enabled": true,
+  "description": "Creates new agent profiles and skills from owner descriptions through intake, dry-run, approval, files, smoke tests and receipt.",
+  "skills": [
+    "profile-factory",
+    "agent-creator"
+  ],
+  "approval_required_for": [
+    "creating_live_profile",
+    "overwriting_existing_profile",
+    "enabling_external_tools",
+    "adding_account_access"
+  ]
+}
+

@@ -1,0 +1,1 @@
+--8<-- "docs/ARCHITECTURE.en.md"

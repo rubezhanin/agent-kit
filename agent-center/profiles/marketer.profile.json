@@ -1,0 +1,20 @@
+{
+  "name": "marketer",
+  "title": "Marketer",
+  "type": "specialist",
+  "default_enabled": true,
+  "description": "Audience, offer, proof bank, channel fit, content strategy and safe marketing experiments.",
+  "skills": [
+    "marketer",
+    "researcher",
+    "legal-ops"
+  ],
+  "approval_required_for": [
+    "publish",
+    "send",
+    "ad_spend",
+    "private_data",
+    "strong_claims"
+  ]
+}
+

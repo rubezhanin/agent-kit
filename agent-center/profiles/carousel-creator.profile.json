@@ -1,0 +1,36 @@
+{
+  "name": "carousel-creator",
+  "title": "Carousel Creator",
+  "type": "optional-integration",
+  "default_enabled": false,
+  "disabled_by_default": true,
+  "description": "Optional integration wrapping the upstream chatgpt-carousel-agent-kit pack. Brand intake -> SMM brief -> carousel workflow -> visual design -> GPT image prompts -> OTK. Disabled by default; requires explicit owner opt-in.",
+  "source_pack": "../../../source/specialists/chatgpt-carousel-agent-kit/",
+  "integration_readme": "../integrations/carousel-creator/README.md",
+  "skills": [
+    "carousel-creator"
+  ],
+  "approval_required_for": [
+    "external_image_generation",
+    "publish_carousel",
+    "send_carousel",
+    "private_data_in_prompts"
+  ],
+  "forbidden_by_default": [
+    "publish_without_approval",
+    "publish_unsafe_claims",
+    "embed_private_faces",
+    "send_to_telegram_without_owner_approval"
+  ],
+  "outputs": [
+    "brand_intake",
+    "smm_brief",
+    "carousel_brief",
+    "slide_plan",
+    "prompt_pack",
+    "visual_brief",
+    "otk_report",
+    "final_delivery_report"
+  ],
+  "disclaimer": "Generates marketing collateral via third-party APIs. Always run legal-ops / otk-checklist before publishing."
+}

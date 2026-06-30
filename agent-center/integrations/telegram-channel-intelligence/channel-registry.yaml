@@ -1,0 +1,18 @@
+# Approved Telegram channels for read-only monitoring.
+# Do not add channels here without owner approval.
+
+channels: []
+
+# Example:
+# channels:
+#   - handle: "@example_channel"
+#     title: "Example Channel"
+#     topic: "AI agents"
+#     status: "approved"
+#     approved_by: "owner"
+#     approved_at: "YYYY-MM-DD"
+#     reason: "Relevant to Hermes/agent architecture"
+#     access_mode: "public_channel"
+#     watcher_joined: false
+#     notes: ""
+

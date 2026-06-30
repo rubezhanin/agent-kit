@@ -1,0 +1,16 @@
+{
+  "name": "chatgpt-carousel-agent-kit",
+  "version": "0.1.0",
+  "public_safe": true,
+  "default_flow": [
+    "brand-intake",
+    "smm-marketing-brief",
+    "carousel-structure",
+    "visual-brief",
+    "gpt-image-prompt-pack",
+    "otk",
+    "final-delivery-report"
+  ],
+  "optional_tool": "https://github.com/AlekseiUL/gpt-image-2-agent-kit",
+  "live_generation": "optional-user-controlled"
+}

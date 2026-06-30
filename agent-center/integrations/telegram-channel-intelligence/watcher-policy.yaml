@@ -1,0 +1,52 @@
+# Telegram watcher policy.
+# Blueprint, not runtime secrets.
+
+enabled: false
+implementation_preference:
+  production: "tdlib"
+  prototype: "telethon"
+  owned_channels: "bot_api"
+
+account_policy:
+  dedicated_watcher_account: true
+  use_owner_main_account: false
+  session_files_in_repo: false
+  session_files_in_wiki: false
+
+actions:
+  read_public_channel_posts: true
+  join_channels: "per_channel_approval_required"
+  post_messages: false
+  comment: false
+  react: false
+  dm_users: false
+  invite_users: false
+  scrape_members: false
+  export_raw_content: "approval_required"
+
+limits:
+  max_new_channel_joins_per_batch: 5
+  min_delay_between_join_attempts_seconds: 120
+  max_channels_initial_setup: 20
+  backoff_on_rate_limit: true
+  stop_on_auth_or_flood_error: true
+
+retention:
+  raw_posts_days: 30
+  normalized_posts_days: 90
+  reports_days: 365
+
+analysis:
+  allowed_outputs:
+    - summaries
+    - topic_clusters
+    - weak_signals
+    - competitor_moves
+    - repeated_questions
+    - source_referenced_notes
+  forbidden_outputs:
+    - member_lists
+    - personal profiling
+    - spam_targets
+    - training_dataset_exports
+

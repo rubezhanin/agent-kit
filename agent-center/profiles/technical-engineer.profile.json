@@ -1,0 +1,19 @@
+{
+  "name": "technical-engineer",
+  "title": "Technical Engineer",
+  "type": "specialist",
+  "default_enabled": true,
+  "description": "Setup, diagnostics, bounded local implementation, scripts, smoke tests and receipts.",
+  "skills": [
+    "technical-engineer",
+    "wiki-memory",
+    "hermes-token-drain-diagnostic"
+  ],
+  "approval_required_for": [
+    "writes_outside_workspace",
+    "destructive_actions",
+    "production",
+    "secrets"
+  ]
+}
+

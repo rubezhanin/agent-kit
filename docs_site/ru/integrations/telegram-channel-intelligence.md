@@ -1,0 +1,1 @@
+--8<-- "agent-center/integrations/telegram-channel-intelligence/README.md"

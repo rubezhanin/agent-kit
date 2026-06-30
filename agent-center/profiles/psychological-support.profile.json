@@ -1,0 +1,13 @@
+{
+  "name": "psychological-support",
+  "title": "Psychological Support",
+  "type": "optional",
+  "default_enabled": false,
+  "disabled_by_default": true,
+  "description": "Supportive non-clinical conversation profile. Requires separate safety review.",
+  "skills": [
+    "psychological-support"
+  ],
+  "disclaimer": "Not diagnosis, treatment or crisis service."
+}
+

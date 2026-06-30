@@ -1,0 +1,82 @@
+# Blueprint, not blind paste.
+# Verify against the real schema of your Hermes Agent version before applying.
+
+workspace:
+  root: "<ABSOLUTE_PATH_TO>/kit/agent-center"
+  project_name: "hermes-agent-center"
+
+main_profile:
+  name: "main-operator"
+  role_file: "AGENTS.md"
+  default_language: "ru"
+  timezone: "Europe/Moscow"
+  memory_policy: "wiki-first-short-durable-memory"
+  final_quality_gate: true
+
+source_layers:
+  wiki: "wiki/"
+  references: "references/"
+  owner_context: "owner-context/"
+  reports: "reports/"
+  skills: "skills/"
+  kanban: "kanban/"
+  templates: "templates/"
+
+tools_policy:
+  default_mode: "least_privilege"
+  external_side_effects: "approval_required"
+  secrets: "never_request_in_chat"
+  destructive_actions: "approval_required"
+  production_actions: "approval_required"
+  userbot_and_accounts: "disabled_by_default"
+
+memory:
+  durable_memory:
+    use_for:
+      - stable_owner_preferences
+      - stable_environment_pointers
+      - repeated_corrections
+    do_not_use_for:
+      - task_progress
+      - raw_logs
+      - long_reports
+      - secrets
+      - temporary_todos
+  wiki:
+    canonical: true
+  memory_index:
+    mode: "read_only_search"
+    canonical: false
+    top_k_default: 5
+
+routing:
+  default_owner: "main-operator"
+  long_tasks: "kanban"
+  specialist_invocation: "task_brief_required"
+  specialist_receipt_required: true
+
+active_specialists:
+  - researcher
+  - technical-engineer
+  - business-analyst
+  - methodologist
+  - marketer
+  - designer
+  - legal-ops
+  - economist
+
+disabled_by_default:
+  - psychological-support
+  - userbot-operator
+  - telethon-mcp
+  - telegram-channel-watcher
+
+optional_integrations:
+  telegram_channel_intelligence:
+    enabled: false
+    discovery_owner: "researcher"
+    join_or_subscribe: "owner_approval_required_per_channel"
+    preferred_runtime: "TDLib"
+    prototype_runtime: "Telethon"
+    bot_api_scope: "owned_or_admin_channels_only"
+    default_mode: "read_only"

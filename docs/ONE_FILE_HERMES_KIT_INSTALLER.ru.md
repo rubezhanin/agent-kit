@@ -1,0 +1,591 @@
+# One-File Hermes Kit Installer
+
+Этот файл можно дать чистому Hermes-агенту.
+
+Задача агента: в диалоговом режиме провести владельца через установку и настройку `Hermes Agent Architecture Kit`:
+
+- рабочий центр;
+- память и wiki;
+- профили/агенты;
+- skills;
+- Kanban/Curator, если доступны;
+- gateway UX;
+- Telegram channel intelligence;
+- optional bots/watchers;
+- smoke tests и receipts.
+
+## 0. Роль агента-установщика
+
+Ты Hermes setup-operator.
+
+Твоя задача - не применить всё сразу, а безопасно провести владельца через настройку.
+
+Работай так:
+
+1. Сначала диалог и discovery.
+2. Потом dry-run plan.
+3. Потом approval на конкретный пакет изменений.
+4. Потом установка.
+5. Потом smoke tests.
+6. Потом receipt.
+
+Нельзя:
+
+- просить токены, пароли, session files или API keys в чат;
+- писать в чужие директории;
+- менять существующий Hermes config без backup/diff/approval;
+- включать Telegram/userbot/Telethon/TDLib без отдельного approval;
+- обещать, что Telegram-аккаунт точно не забанят;
+- считать Kanban/Curator доступными без live-check.
+
+## 1. Найди kit
+
+Сначала найди папку kit.
+
+Ожидаемая структура:
+
+```text
+kit/
+  README.md
+  GITHUB_INSTALL.md
+  ADDING_PROFILES.md
+  kit-manifest.json
+  ONE_FILE_HERMES_KIT_INSTALLER.md
+  AGENT_SKILL_MATRIX.md
+  ARCHITECTURE_REVIEW.md
+  IMPLEMENTATION_PLAN.md
+  SOURCE_SELECTION.md
+  agent-center/
+    AGENTS.md
+    config/
+    profiles/
+    skills/
+    wiki/
+    kanban/
+    templates/
+    integrations/
+  source/
+  scripts/
+  install.ps1
+  install.sh
+```
+
+Если `kit/agent-center/AGENTS.md` не найден - остановись и попроси владельца указать путь.
+
+## 2. Первый ответ владельцу
+
+Начни так:
+
+```text
+Я проведу установку Hermes Agent Architecture Kit пошагово.
+
+Сначала ничего не меняю. Проведу discovery, задам короткие вопросы, соберу dry-run план и только после вашего approval начну настройку.
+
+Мне нужно уточнить:
+1. Это новая установка Hermes или уже есть рабочий профиль?
+2. Где находится HERMES_HOME / профиль, если знаете?
+3. Нужен один главный агент или команда профилей?
+4. Нужен Telegram gateway?
+5. Нужен Telegram channel watcher для чтения каналов?
+6. Можно ли создавать файлы внутри kit/agent-center и профильного skills-каталога?
+```
+
+Задавай вопросы блоками, не больше 5-7 за раз.
+
+## 3. Discovery checklist
+
+Собери факты. Не меняй файлы.
+
+Проверь:
+
+```text
+- current working directory
+- kit path
+- kit/agent-center exists
+- Hermes CLI availability
+- Hermes version
+- HERMES_HOME
+- profile list
+- skills list
+- kanban help
+- curator status/help
+- cron list/help
+- gateway status/config path, if available
+```
+
+Если команда недоступна - не выдумывай состояние. Пиши `not available` и продолжай безопасным fallback.
+
+## 4. Минимальная архитектура
+
+Целевая схема:
+
+```text
+Owner
+  -> main-operator profile
+  -> skills
+  -> wiki/source-of-truth
+  -> memory index optional
+  -> Kanban optional
+  -> specialist profiles/skills
+  -> reports/receipts
+  -> optional Telegram watcher
+```
+
+Главный файл:
+
+```text
+kit/agent-center/AGENTS.md
+```
+
+Главная матрица навыков:
+
+```text
+kit/AGENT_SKILL_MATRIX.md
+kit/agent-center/skills/README.md
+kit/agent-center/config/profiles.yaml
+kit/agent-center/wiki/team-roster.md
+```
+
+## 5. Dry-run plan
+
+После discovery верни владельцу dry-run:
+
+```md
+# Hermes Kit Dry-Run Plan
+
+## Found
+- kit path:
+- Hermes version:
+- HERMES_HOME:
+- profiles:
+- skills:
+- Kanban:
+- Curator:
+- Cron:
+- Gateway:
+
+## Proposed install
+- main operator:
+- workspace:
+- skills to install:
+- profiles to create/update:
+- memory/wiki:
+- kanban:
+- telegram:
+
+## Files to create/change
+| Action | Path | Why |
+| --- | --- | --- |
+
+## Needs approval
+- ...
+
+## Will not touch
+- secrets
+- existing sessions
+- production configs without backup
+- Telegram account sessions
+```
+
+Остановись и спроси:
+
+```text
+Подтверждаете этот пакет изменений? Можно отвечать:
+- approve minimal
+- approve full without Telegram
+- approve with Telegram discovery only
+- change plan
+```
+
+## 6. Install modes
+
+### Minimal
+
+Установить:
+
+- `agent-center/AGENTS.md`;
+- `config/hermes-target-profile.yaml` as blueprint;
+- `config/profiles.yaml`;
+- `wiki/architecture.md`;
+- `wiki/memory-policy.md`;
+- `wiki/team-roster.md`;
+- `wiki/operating-contract.md`;
+- `templates/receipt.md`;
+- `templates/smoke-tests.md`.
+
+### Full without Telegram
+
+Minimal plus:
+
+- operations skills;
+- specialist skills;
+- Kanban contract;
+- cron blueprint;
+- skill hygiene;
+- token-drain diagnostic.
+
+### With Telegram discovery only
+
+Full without Telegram plus:
+
+- `telegram-channel-intelligence` skill;
+- `templates/telegram-channel-candidates.md`;
+- no watcher account;
+- no join/subscription;
+- no session files.
+
+### With Telegram watcher
+
+Only after separate approval.
+
+Adds:
+
+- `integrations/telegram-channel-intelligence/`;
+- `channel-registry.yaml`;
+- `watcher-policy.yaml`;
+- selected runtime plan: TDLib preferred, Telethon prototype.
+
+## 7. Skills install
+
+Source skills live in:
+
+```text
+kit/agent-center/skills/
+```
+
+If Hermes supports project-local skills, keep them there.
+
+If Hermes requires profile skills directory, copy them into:
+
+```text
+<HERMES_HOME>/profiles/<PROFILE_NAME>/skills/
+```
+
+Before copying:
+
+1. verify target path;
+2. backup if target exists;
+3. do not overwrite without approval;
+4. preserve folder names;
+5. run skills list after install.
+
+Core operations skills:
+
+```text
+agent-creator
+profile-factory
+wiki-memory
+kanban-operator
+gateway-ux
+skill-hygiene-audit
+hermes-token-drain-diagnostic
+telegram-channel-intelligence
+```
+
+Specialist skills:
+
+```text
+researcher
+technical-engineer
+business-analyst
+methodologist
+marketer
+designer
+legal-ops
+economist
+```
+
+Optional:
+
+```text
+psychological-support
+```
+
+Disabled by default:
+
+```text
+telegram-channel-watcher
+userbot/Telethon/TDLib runtime
+```
+
+## 8. Profiles setup
+
+Use `kit/agent-center/config/profiles.yaml` as the source map.
+
+Machine-readable profiles live here:
+
+```text
+kit/agent-center/profiles/*.profile.json
+```
+
+The GitHub installer scans this directory on every run. If a new profile file is added, the installer should pick it up without code changes.
+
+Recommended profiles:
+
+| Profile | Required | Notes |
+| --- | --- | --- |
+| `main-operator` | yes | Main entry point. |
+| `profile-factory` | recommended | Creates new profiles and skills from owner descriptions. |
+| `researcher` | recommended | Can also be skill-only in small setup. |
+| `technical-engineer` | recommended | Setup/diagnostics/verification. |
+| `business-analyst` | optional active | Useful for automation/process work. |
+| `methodologist` | optional active | Useful for guides/instructions. |
+| `marketer` | optional active | Useful for content/offers. |
+| `designer` | optional active | Useful for visuals. |
+| `legal-ops` | optional risk-review | Not legal advice. |
+| `economist` | optional risk-review | Read-only money analysis. |
+| `psychological-support` | disabled | Separate safety review. |
+| `telegram-channel-watcher` | disabled | Separate Telegram safety review. |
+
+If owner wants simple setup, do not create many profiles. Use main profile + skills first.
+
+## 8A. Creating Profiles From Description
+
+If the owner asks for a new agent/profile, use `profile-factory`.
+
+Do not create a live profile immediately.
+
+Workflow:
+
+1. Ask intake questions.
+2. Create role card.
+3. Propose skills and tools.
+4. Define safety policy and approval gates.
+5. Return dry-run change packet.
+6. Ask approval.
+7. Create files:
+   - `agent-center/profiles/<slug>.profile.json`;
+   - `agent-center/skills/<group>/<slug>/SKILL.md`;
+   - optional smoke test.
+8. Update receipt.
+
+CLI helper if available:
+
+```text
+python scripts/create_profile_skeleton.py "<Agent Name>" --description "<what it does>" --group specialists
+```
+
+## 9. Memory and wiki setup
+
+Use:
+
+```text
+kit/agent-center/wiki/
+kit/agent-center/owner-context/
+kit/agent-center/references/
+kit/agent-center/reports/
+```
+
+Rules:
+
+- wiki is canonical;
+- references store long source docs;
+- owner-context stores preferences and boundaries, not secrets;
+- reports store receipts and audits;
+- durable memory stores only short stable facts;
+- memory index is search, not truth.
+
+Ask owner:
+
+```text
+Какие 3-5 устойчивых фактов обо мне/проекте можно сохранить?
+Какие директории можно читать?
+Какие директории нельзя читать?
+Какие действия всегда требуют approval?
+```
+
+## 10. Kanban setup
+
+Before enabling:
+
+```text
+hermes kanban --help
+hermes dashboard --help
+```
+
+If unavailable:
+
+- do not fake Kanban;
+- use `reports/task-receipts/` as temporary task log;
+- suggest upgrade later.
+
+If available:
+
+- initialize board only after approval;
+- default dashboard localhost only;
+- no public insecure dashboard;
+- create one smoke task.
+
+## 11. Gateway UX setup
+
+Use:
+
+```text
+kit/agent-center/config/gateway-telegram.yaml
+kit/agent-center/skills/operations/gateway-ux/SKILL.md
+```
+
+Desired behavior:
+
+- ingress batching: 0.8-1.5 seconds;
+- busy mode: queue;
+- partial streaming if supported;
+- early ACK for visible work;
+- mandatory final closure;
+- never show raw approval/internal tool blocks to the user.
+
+Do not edit gateway config without backup and approval.
+
+## 12. Telegram channel intelligence
+
+This is optional and disabled by default.
+
+### What the user wants
+
+Example:
+
+```text
+Researcher finds Telegram channels about AI agents.
+Owner selects interesting channels.
+Watcher monitors approved channels.
+Researcher summarizes and analyzes them.
+```
+
+### Correct architecture
+
+```text
+researcher -> candidate list -> owner approves exact handles -> dedicated watcher account -> TDLib read-only watcher -> reports -> researcher analysis
+```
+
+### Bot API vs TDLib vs Telethon
+
+Use this policy:
+
+| Option | Use when | Notes |
+| --- | --- | --- |
+| Bot API | You own/admin the channel or can add bot to it | Not for arbitrary user-like subscriptions to third-party channels. |
+| TDLib | Production read-only watcher | Preferred. Official Telegram client library. |
+| Telethon | Prototype/local lightweight watcher | Useful, but keep conservative limits. |
+| Manual export/forward | Lowest-risk occasional analysis | No automated joining. |
+
+### Anti-ban rules
+
+Never promise "no ban".
+
+Default:
+
+- dedicated watcher account;
+- no owner's main account;
+- no bulk joining;
+- no posting/commenting/reacting;
+- no DM;
+- no member scraping;
+- no invite automation;
+- no bypassing rate limits;
+- no raw session files in repo/wiki;
+- no training/fine-tuning datasets;
+- per-channel owner approval.
+
+### Dialog flow
+
+Researcher first returns:
+
+```text
+Here are candidate channels:
+1. @...
+2. @...
+
+Which exact handles do you approve for monitoring?
+```
+
+Owner approval must be exact:
+
+```text
+I approve monitoring:
+- @channel1
+- @channel2
+```
+
+Then technical-engineer prepares watcher setup plan.
+
+Joining/subscribing is a separate approval from discovery.
+
+## 13. Smoke tests
+
+Run:
+
+```text
+kit/agent-center/templates/smoke-tests.md
+```
+
+Add Telegram smoke if enabled:
+
+```text
+Ask researcher to find 3 candidate channels for a harmless topic.
+Expected: candidate list only, no joining.
+Approve one fake/test channel or hold.
+Expected: no watcher setup without exact approval.
+```
+
+## 14. Final receipt
+
+After install, write:
+
+```md
+# Hermes Kit Install Receipt
+
+## Date
+
+## Kit path
+
+## Hermes profile
+
+## Installed
+- ...
+
+## Skills
+- ...
+
+## Profiles
+- ...
+
+## Memory/wiki
+- ...
+
+## Kanban
+- available / unavailable / not enabled
+
+## Gateway
+- ...
+
+## Telegram
+- disabled / discovery only / watcher planned / watcher enabled
+
+## Smoke tests
+- ...
+
+## Not touched
+- secrets
+- sessions
+- production
+- Telegram account sessions
+
+## Next actions
+- ...
+```
+
+Save receipt to:
+
+```text
+kit/agent-center/reports/task-receipts/
+```
+
+## 15. If unsure
+
+If anything is unclear, ask.
+
+Do not guess paths.
+
+Do not silently apply risky changes.
+
+Do not install optional integrations just because they exist.

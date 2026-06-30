@@ -1,0 +1,35 @@
+# Blueprint for Telegram / direct gateway UX.
+# Verify exact Hermes gateway keys before applying.
+
+ingress_batching:
+  enabled: true
+  session_key: "platform + profile + chat_id + thread_id_or_topic_id + user_id"
+  debounce_seconds: 0.8
+  hard_cap_seconds: 1.5
+  busy_input_mode: "queue"
+  rule: "Collect near-simultaneous text / files / images into one agent turn."
+
+streaming:
+  mode: "partial"
+  early_ack:
+    enabled: true
+    when: "task requires tools, files, memory, search, long reasoning or visible delay"
+    max_one_ack_per_phase: true
+  final_closure:
+    required: true
+    rule: "Every normal task ends with one user-facing final answer."
+
+internal_blocks:
+  never_forward_raw:
+    - approval_required
+    - pending_command
+    - run_id
+    - request_id
+    - stack_trace
+    - callback_payload
+  replacement: "Plain-language status and exact next human decision needed."
+
+security:
+  secrets_in_chat: "forbidden"
+  account_sessions: "forbidden"
+  public_gateway_exposure: "forbidden_by_default"

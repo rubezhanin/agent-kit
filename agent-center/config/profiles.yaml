@@ -1,0 +1,109 @@
+# Blueprint for Hermes profile / team layout.
+# Use this as a role map when creating Hermes profiles or project skills.
+
+profiles:
+  main-operator:
+    type: primary
+    purpose: "Triage, routing, Kanban, quality gate, final user answer; keeps the Origin Return anchors on every task."
+    prompt: "../prompts/main-agent-system.md"
+    skills:
+      - "../skills/operations/origin-return-protocol/SKILL.md"
+      - "../skills/operations/wiki-memory/SKILL.md"
+      - "../skills/operations/kanban-operator/SKILL.md"
+      - "../skills/operations/gateway-ux/SKILL.md"
+      - "../skills/operations/skill-hygiene-audit/SKILL.md"
+      - "../skills/operations/hermes-token-drain-diagnostic/SKILL.md"
+      - "../skills/operations/telegram-channel-intelligence/SKILL.md"
+      - "../skills/operations/agent-creator/SKILL.md"
+      - "../skills/operations/profile-factory/SKILL.md"
+    tools:
+      - files
+      - shell_readonly_by_default
+      - kanban_if_available
+      - memory_index_search
+      - telegram_channel_intelligence_if_enabled
+    approval_required_for:
+      - writes_outside_workspace
+      - destructive_actions
+      - external_side_effects
+      - secrets
+      - accounts
+      - production
+
+  researcher:
+    type: specialist
+    purpose: "Public-source research, source scouting, fact checking, Telegram channel candidate discovery."
+    skill: "../skills/specialists/researcher/SKILL.md"
+    support_skills:
+      - "../skills/operations/telegram-channel-intelligence/SKILL.md"
+    output: "source ledger + confidence + gaps + channel candidates when requested"
+
+  profile-factory:
+    type: operations
+    purpose: "Create new agent profiles and skills from owner descriptions through intake, dry-run, approval and smoke tests."
+    skill: "../skills/operations/profile-factory/SKILL.md"
+    output: "profile manifest + skill skeleton + safety policy + smoke test + receipt"
+
+  technical-engineer:
+    type: specialist
+    purpose: "Setup, diagnostics, local bounded implementation, smoke tests."
+    skill: "../skills/specialists/technical-engineer/SKILL.md"
+    output: "diff / changes + verification + receipt"
+
+  business-analyst:
+    type: specialist
+    purpose: "Process map, automation audit, pilot design, implementation handoff."
+    skill: "../skills/specialists/business-analyst/SKILL.md"
+    output: "process map + feasibility gate + risk register"
+
+  methodologist:
+    type: specialist
+    purpose: "Instructions, courses, guides, knowledge packaging."
+    skill: "../skills/specialists/methodologist/SKILL.md"
+    output: "structured learning / instruction artifact + quality checklist"
+
+  marketer:
+    type: specialist
+    purpose: "Audience, offer, content strategy, proof bank, safe experiments."
+    skill: "../skills/specialists/marketer/SKILL.md"
+    output: "marketing read + hypothesis + proof path + OTK"
+
+  designer:
+    type: specialist
+    purpose: "Visual brief, style pack, prompt pack, visual QA."
+    skill: "../skills/specialists/designer/SKILL.md"
+    output: "visual brief + prompt pack + visual OTK"
+
+  legal-ops:
+    type: risk_review
+    purpose: "Contract, claim, privacy, AI vendor and legal-risk triage."
+    skill: "../skills/specialists/legal-ops/SKILL.md"
+    output: "risk flags + safer wording + lawyer packet if needed"
+
+  economist:
+    type: risk_review
+    purpose: "ROI, pricing, paid pilot economics, subscription and budget review."
+    skill: "../skills/specialists/economist/SKILL.md"
+    output: "money-risk review + assumptions + missing numbers"
+
+  psychological-support:
+    type: optional_disabled
+    purpose: "Supportive conversation only, with crisis and non-clinical guardrails."
+    skill: "../skills/optional/psychological-support/SKILL.md"
+    enable_only_after: "separate safety review"
+
+  telegram-channel-watcher:
+    type: optional_disabled
+    purpose: "Dedicated read-only watcher for approved Telegram channels."
+    skill: "../skills/operations/telegram-channel-intelligence/SKILL.md"
+    enable_only_after: "separate Telegram / account safety review"
+    preferred_runtime: "TDLib"
+    prototype_runtime: "Telethon"
+    forbidden_by_default:
+      - bulk_join
+      - posting
+      - commenting
+      - reactions
+      - dm_users
+      - member_scraping
+      - owner_main_account

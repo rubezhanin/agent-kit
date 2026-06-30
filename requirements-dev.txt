@@ -1,0 +1,7 @@
+# Pinned dependencies for CI / lint / test.
+# Use with:  pip install -r requirements-dev.txt
+
+PyYAML==6.0.2
+jsonschema==4.23.0
+pytest==8.3.4
+pytest-cov==6.0.0

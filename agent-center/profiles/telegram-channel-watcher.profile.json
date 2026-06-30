@@ -1,0 +1,29 @@
+{
+  "name": "telegram-channel-watcher",
+  "title": "Telegram Channel Watcher",
+  "type": "optional-integration",
+  "default_enabled": false,
+  "disabled_by_default": true,
+  "description": "Dedicated read-only watcher for owner-approved Telegram channels.",
+  "skills": [
+    "telegram-channel-intelligence"
+  ],
+  "preferred_runtime": "TDLib",
+  "prototype_runtime": "Telethon",
+  "approval_required_for": [
+    "create_session",
+    "join_channel",
+    "read_private_group",
+    "export_raw_content"
+  ],
+  "forbidden_by_default": [
+    "bulk_join",
+    "post",
+    "comment",
+    "react",
+    "dm_users",
+    "scrape_members",
+    "use_owner_main_account"
+  ]
+}
+

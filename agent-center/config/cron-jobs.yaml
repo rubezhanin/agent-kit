@@ -1,0 +1,35 @@
+# Blueprint for Hermes cron / maintenance jobs.
+# All jobs are read-only or report-only by default.
+
+jobs:
+  - name: daily-health-report
+    cadence: "daily"
+    mode: "read_only"
+    writes_to: "reports/health/"
+    prompt: "Check workspace presence, profile availability, kanban availability, gateway status if accessible, and write a compact health report. Do not modify config."
+
+  - name: weekly-skills-hygiene-audit
+    cadence: "weekly"
+    mode: "read_only"
+    skill: "skill-hygiene-audit"
+    writes_to: "reports/audits/"
+    prompt: "Audit skills for duplicates, oversize, stale routing descriptions and missing frontmatter. Do not edit skills."
+
+  - name: weekly-token-drain-diagnostic
+    cadence: "weekly_or_on_symptom"
+    mode: "read_only"
+    skill: "hermes-token-drain-diagnostic"
+    writes_to: "reports/audits/"
+    prompt: "Collect evidence for token drain. Rank likely causes. Stop before fixes."
+
+  - name: kanban-gc-and-stats
+    cadence: "weekly"
+    mode: "read_only_then_approval"
+    writes_to: "reports/health/"
+    prompt: "Summarize stale, blocked, review and done tasks. Do not archive or mutate without approval."
+
+  - name: nightly-worklog-digest
+    cadence: "daily"
+    mode: "report_only"
+    writes_to: "reports/task-receipts/"
+    prompt: "Summarize completed work and open blockers from reports and Kanban. Do not invent missing status."

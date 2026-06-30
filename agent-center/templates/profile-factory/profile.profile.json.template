@@ -1,0 +1,14 @@
+{
+  "name": "<profile-slug>",
+  "title": "<Human Title>",
+  "type": "specialist",
+  "default_enabled": false,
+  "description": "<What this profile does.>",
+  "skills": [
+    "<profile-slug>"
+  ],
+  "approval_required_for": [],
+  "forbidden_by_default": [],
+  "outputs": []
+}
+

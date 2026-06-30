@@ -1,0 +1,152 @@
+site_name: Hermes Agent Architecture Kit
+site_description: >-
+  A manifest-driven kit for installing a Hermes Agent workspace with profiles,
+  skills, wiki, memory, optional Kanban, and a read-only Telegram channel
+  intelligence layer.
+site_author: Hermes Kit contributors
+copyright: Copyright &copy; 2026 Hermes Kit contributors
+
+# Use the en locale as default; ru is added by the static-i18n plugin.
+docs_dir: docs_site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+    - search.highlight
+    - search.suggest
+    - search.share
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.png
+
+extra:
+  version:
+    provider: mike
+    default: stable
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/hermes-agent-architecture-kit
+      name: GitHub repository
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      social_url_shorthand: true
+
+plugins:
+  - search:
+      lang:
+        - en
+        - ru
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          site_name: Hermes Agent Architecture Kit
+          nav_translations:
+            Home: Home
+            Install: Install
+            Architecture: Architecture
+            Reference: Reference
+            Integrations: Integrations
+            Origin Return Protocol: Origin Return Protocol
+            Changelog: Changelog
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: Hermes Agent Architecture Kit
+          nav_translations:
+            Home: Главная
+            Install: Установка
+            Architecture: Архитектура
+            Reference: Справочник
+            Integrations: Интеграции
+            Origin Return Protocol: Origin Return Protocol
+            Changelog: История версий
+      fallback_to_default: true
+
+extra_css:
+  - assets/extra.css
+
+extra_javascript:
+  - assets/extra.js
+
+nav:
+  - Home: index.md
+  - Install:
+      - install/index.md
+      - install/one-file.md
+      - install/adding-profiles.md
+  - Architecture:
+      - architecture/index.md
+      - architecture/origin-return-protocol.md
+      - architecture/architecture-review.md
+      - architecture/implementation-plan.md
+  - Reference:
+      - reference/skill-matrix.md
+      - reference/source-selection.md
+      - reference/changelog.md
+      - reference/contributing.md
+  - Integrations:
+      - integrations/telegram-channel-intelligence.md
+      - integrations/carousel-creator.md
+
+validation:
+  omitted_files: ignore
+  absolute_links: ignore
+  unrecognized_links: ignore

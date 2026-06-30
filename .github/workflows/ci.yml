@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate (JSON / YAML / dry-run / locale sanity)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
+
+      - name: Install dev requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Validate JSON
+        run: |
+          python scripts/check_release.py --json-only
+
+      - name: Validate YAML
+        run: |
+          python -c "
+          import os, yaml, sys
+          errs = 0
+          for root, _, files in os.walk('.'):
+              if '/.git' in root or '/source' in root:
+                  continue
+              for f in files:
+                  if f.endswith(('.yaml', '.yml')):
+                      try:
+                          yaml.safe_load(open(os.path.join(root, f), encoding='utf-8'))
+                      except Exception as e:
+                          print('YAML FAIL', f, e)
+                          errs += 1
+          sys.exit(errs)
+          "
+
+      - name: Installer dry-run
+        run: |
+          python scripts/setup_kit.py --dry-run --include-disabled
+
+      - name: Locale sanity (no cyrillic regressed into en/)
+        run: |
+          python scripts/check_locale_sanity.py
+
+  docs-build:
+    name: Build docs (MkDocs, strict)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-docs.txt
+
+      - name: Install docs requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-docs.txt
+
+      - name: Build docs
+        run: |
+          mkdocs build

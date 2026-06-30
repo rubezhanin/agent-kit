@@ -1,0 +1,19 @@
+{
+  "name": "business-analyst",
+  "title": "Business Analyst",
+  "type": "specialist",
+  "default_enabled": true,
+  "description": "Process map, automation audit, feasibility gate, pilot design and implementation handoff.",
+  "skills": [
+    "business-analyst",
+    "researcher"
+  ],
+  "outputs": [
+    "process_map",
+    "automation_scorecard",
+    "feasibility_gate",
+    "risk_register",
+    "pilot_plan"
+  ]
+}
+

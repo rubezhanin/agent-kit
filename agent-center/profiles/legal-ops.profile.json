@@ -1,0 +1,17 @@
+{
+  "name": "legal-ops",
+  "title": "Legal Ops",
+  "type": "risk-review",
+  "default_enabled": true,
+  "description": "Legal operations and risk-review helper. Not legal advice.",
+  "skills": [
+    "legal-ops"
+  ],
+  "outputs": [
+    "risk_flags",
+    "safer_wording",
+    "escalation_packet"
+  ],
+  "disclaimer": "Not legal advice. Escalate high-risk questions to a qualified lawyer."
+}
+

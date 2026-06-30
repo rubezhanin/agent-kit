@@ -1,0 +1,47 @@
+# ============================================================================
+# Hermes Agent Architecture Kit — gitignore
+# ============================================================================
+
+# Local installer state
+agent-center/.hermes-kit/
+agent-center/reports/task-receipts/*.json
+agent-center/reports/task-receipts/*.md
+agent-center/reports/health/*.json
+agent-center/reports/health/*.md
+agent-center/reports/audits/*.json
+agent-center/reports/audits/*.md
+
+# Telegram watcher local state
+agent-center/integrations/telegram-channel-intelligence/cache/
+*.session
+*.session-journal
+tdlib/
+
+# Secrets and local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.token
+secrets/
+
+# Python / local tooling
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Temporary local tests / dry runs
+tmp-profile-test-*/
+tmp-dry-run-workspace/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

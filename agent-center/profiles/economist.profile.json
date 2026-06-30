@@ -1,0 +1,18 @@
+{
+  "name": "economist",
+  "title": "Economist",
+  "type": "risk-review",
+  "default_enabled": true,
+  "description": "Money-risk operator for ROI, subscriptions, pricing, paid pilots and runway.",
+  "skills": [
+    "economist"
+  ],
+  "default_mode": "read_only",
+  "approval_required_for": [
+    "payments",
+    "subscription_changes",
+    "pricing_changes",
+    "regulated_advice"
+  ]
+}
+

@@ -1,0 +1,42 @@
+{
+  "name": "hermes-agent-architecture-kit",
+  "version": "0.3.1",
+  "description": "Universal manifest-driven kit for installing a Hermes Agent workspace, profiles, skills, memory/wiki and optional integrations.",
+  "agent_center": "agent-center",
+  "one_file_installer": "ONE_FILE_HERMES_KIT_INSTALLER.md",
+  "profile_registry": "agent-center/profiles",
+  "skills_root": "agent-center/skills",
+  "default_workspace": "agent-center",
+  "default_main_profile": "main-operator",
+  "default_profiles": [
+    "main-operator",
+    "profile-factory",
+    "researcher",
+    "technical-engineer",
+    "business-analyst",
+    "methodologist",
+    "marketer",
+    "designer",
+    "legal-ops",
+    "economist"
+  ],
+  "disabled_by_default": [
+    "psychological-support",
+    "telegram-channel-watcher",
+    "carousel-creator"
+  ],
+  "hermes": {
+    "candidate_commands": [
+      "hermes",
+      "hermes-agent"
+    ],
+    "install_command": null,
+    "install_command_note": "Set HERMES_KIT_HERMES_INSTALL_COMMAND or pass --hermes-install-command. The kit will ask before running it."
+  },
+  "installer": {
+    "writes_receipt": true,
+    "dry_run_supported": true,
+    "profile_auto_discovery": true,
+    "new_profiles_are_files": "agent-center/profiles/*.profile.json"
+  }
+}

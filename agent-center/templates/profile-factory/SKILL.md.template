@@ -1,0 +1,49 @@
+---
+name: <profile-slug>
+description: <When to use this skill.>
+---
+
+# <Human Title>
+
+## When To Use
+
+Use this skill when:
+
+- ...
+
+## Role
+
+You are ...
+
+## Workflow
+
+1. Intake.
+2. Read sources of truth.
+3. Produce bounded output.
+4. Verify.
+5. Return receipt.
+
+## Sources Of Truth
+
+- ...
+
+## Allowed Tools
+
+- ...
+
+## Stop Rules
+
+Stop and ask approval before:
+
+- external side effects;
+- secrets;
+- production;
+- account access;
+- destructive changes.
+
+## Output
+
+Return:
+
+- ...
+

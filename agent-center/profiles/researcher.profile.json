@@ -1,0 +1,18 @@
+{
+  "name": "researcher",
+  "title": "Researcher",
+  "type": "specialist",
+  "default_enabled": true,
+  "description": "Public-source researcher: sources, facts, weak signals and Telegram channel candidates.",
+  "skills": [
+    "researcher",
+    "telegram-channel-intelligence"
+  ],
+  "outputs": [
+    "source_ledger",
+    "confidence",
+    "evidence_gaps",
+    "telegram_channel_candidates"
+  ]
+}
+

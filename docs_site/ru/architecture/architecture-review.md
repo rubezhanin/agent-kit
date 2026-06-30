@@ -1,0 +1,1 @@
+--8<-- "docs/ARCHITECTURE_REVIEW.ru.md"

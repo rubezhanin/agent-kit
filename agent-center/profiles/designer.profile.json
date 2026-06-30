@@ -1,0 +1,17 @@
+{
+  "name": "designer",
+  "title": "Designer",
+  "type": "specialist",
+  "default_enabled": true,
+  "description": "Visual brief, style packs, prompt packs, image backend policy and visual QA.",
+  "skills": [
+    "designer",
+    "marketer"
+  ],
+  "approval_required_for": [
+    "external_image_generation_with_private_assets",
+    "brand_assets",
+    "people_photos"
+  ]
+}
+

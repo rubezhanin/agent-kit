@@ -1,0 +1,26 @@
+/* Hermes Kit docs — extra styles */
+
+:root {
+  --md-admonition-bg-color: var(--md-default-bg-color);
+}
+
+.grid.cards > ul {
+  gap: 1rem;
+}
+
+.md-typeset .headerlink {
+  opacity: 0.25;
+}
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink {
+  opacity: 1;
+}
+
+.md-typeset code {
+  word-break: break-word;
+}
+
+.md-typeset .admonition {
+  border-radius: 0.4rem;
+}
